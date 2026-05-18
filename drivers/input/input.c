@@ -442,7 +442,7 @@ static void input_handle_event(struct input_dev *dev,
  * axis, etc.
  */
 #ifdef CONFIG_KSU
-/* ksu_input_hook removed - SUSFS uses inline hooks */
+/* SUSFS inline hook - old bool guard removed */
 extern __attribute__((cold)) int ksu_handle_input_handle_event(
 			unsigned int *type, unsigned int *code, int *value);
 #endif

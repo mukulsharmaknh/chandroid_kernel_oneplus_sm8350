@@ -593,7 +593,7 @@ ssize_t ksys_read(unsigned int fd, char __user *buf, size_t count)
 }
 
 #ifdef CONFIG_KSU
-/* ksu_init_rc_hook removed - SUSFS uses inline hooks */
+/* SUSFS inline hook - old bool guard removed */
 extern __attribute__((cold)) int ksu_handle_sys_read(unsigned int fd,
 				char __user **buf_ptr, size_t *count_ptr);
 #endif
