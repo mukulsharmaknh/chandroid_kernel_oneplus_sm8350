@@ -54,10 +54,6 @@ static const struct ksu_feature_handler kernel_umount_handler = {
 #ifdef CONFIG_KSU_SUSFS
 extern bool susfs_is_log_enabled;
 #ifdef CONFIG_KSU_SUSFS_SUS_MOUNT
-bool susfs_is_current_zygote_domain(void)
-{
-	return !susfs_is_current_proc_umounted();
-}
 struct vfsmount *susfs_get_non_sus_vfsmnt_from_vfsmnt(struct vfsmount *vfsmnt)
 {
 	return vfsmnt;
