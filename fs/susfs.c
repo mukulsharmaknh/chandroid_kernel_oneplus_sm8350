@@ -901,6 +901,28 @@ out:
 }
 #endif // #ifdef CONFIG_KSU_SUSFS_SUS_SU
 
+/* stubs for ReSukiSU features not in SUSFS v1.5.5 */
+#ifdef CONFIG_KSU_SUSFS
+bool susfs_is_current_proc_umounted(void)
+{
+	return false;
+}
+
+void susfs_set_current_proc_umounted(void)
+{
+}
+
+void susfs_start_sdcard_monitor_fn(void)
+{
+}
+#endif
+
+#ifdef CONFIG_KSU_SUSFS_TRY_UMOUNT
+void susfs_try_umount_all(uid_t uid)
+{
+}
+#endif
+
 /* susfs_init */
 void susfs_init(void) {
 	spin_lock_init(&susfs_spin_lock);

@@ -106,7 +106,19 @@ void try_umount(const char *mnt, int flags)
 }
 
 #ifdef CONFIG_KSU_SUSFS
-extern struct work_struct susfs_extra_works;
+struct work_struct susfs_extra_works;
+
+void ksu_try_umount(const char *mnt, bool check_mnt, int flags, uid_t uid)
+{
+}
+
+void ksu_susfs_disable_sus_su(void)
+{
+}
+
+void ksu_susfs_enable_sus_su(void)
+{
+}
 #endif
 
 static void do_umount_for_current_task()
