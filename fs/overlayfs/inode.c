@@ -152,7 +152,6 @@ int ovl_getattr(const struct path *path, struct kstat *stat,
 	bool metacopy_blocks = false;
 
 	metacopy_blocks = ovl_is_metacopy_dentry(dentry);
-
 #ifdef CONFIG_KSU_SUSFS_SUS_OVERLAYFS
 	ovl_path_lowerdata(dentry, &realpath);
 	if (likely(realpath.mnt && realpath.dentry)) {

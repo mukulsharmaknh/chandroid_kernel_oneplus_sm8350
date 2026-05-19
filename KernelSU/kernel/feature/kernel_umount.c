@@ -53,6 +53,31 @@ static const struct ksu_feature_handler kernel_umount_handler = {
 
 #ifdef CONFIG_KSU_SUSFS
 extern bool susfs_is_log_enabled;
+#ifdef CONFIG_KSU_SUSFS_SUS_MOUNT
+int susfs_get_non_sus_mnt_id_from_mnt(struct mount *orig_mnt)
+{
+	if (orig_mnt && orig_mnt->mnt.susfs_mnt_id_backup)
+		return (int)orig_mnt->mnt.susfs_mnt_id_backup;
+	return orig_mnt ? orig_mnt->mnt_id : 0;
+}
+bool susfs_is_current_zygote_domain(void)
+{
+	return !susfs_is_current_proc_umounted();
+}
+struct vfsmount *susfs_get_non_sus_vfsmnt_from_vfsmnt(struct vfsmount *vfsmnt)
+{
+	return vfsmnt;
+}
+#endif
+#ifdef CONFIG_KSU_SUSFS_AUTO_ADD_SUS_KSU_DEFAULT_MOUNT
+void susfs_auto_add_sus_ksu_default_mount(const char __user *to_pathname) {}
+#endif
+#ifdef CONFIG_KSU_SUSFS_AUTO_ADD_SUS_BIND_MOUNT
+int susfs_auto_add_sus_bind_mount(const char *pathname, struct path *path_target) { return 0; }
+#endif
+#ifdef CONFIG_KSU_SUSFS_AUTO_ADD_TRY_UMOUNT_FOR_BIND_MOUNT
+void susfs_auto_add_try_umount_for_bind_mount(struct path *path) {}
+#endif
 #endif // #ifdef CONFIG_KSU_SUSFS
 
 #if LINUX_VERSION_CODE >= KERNEL_VERSION(5, 9, 0) || defined(KSU_HAS_PATH_UMOUNT)
@@ -106,19 +131,11 @@ void try_umount(const char *mnt, int flags)
 }
 
 #ifdef CONFIG_KSU_SUSFS
-struct work_struct susfs_extra_works;
-
-void ksu_try_umount(const char *mnt, bool check_mnt, int flags, uid_t uid)
+static void susfs_extra_work_handler(struct work_struct *work)
 {
 }
 
-void ksu_susfs_disable_sus_su(void)
-{
-}
-
-void ksu_susfs_enable_sus_su(void)
-{
-}
+static DECLARE_WORK(susfs_extra_works, susfs_extra_work_handler);
 #endif
 
 static void do_umount_for_current_task()
