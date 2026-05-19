@@ -257,6 +257,13 @@ out_copy_to_user:
 		info.err = -EFAULT;
 	}
 	SUSFS_LOGI("CMD_SUSFS_HIDE_SUS_MNTS_FOR_NON_SU_PROCS -> ret: %d\n", info.err);
+
+int susfs_get_non_sus_mnt_id_from_mnt(struct mount *orig_mnt)
+{
+	if (orig_mnt && orig_mnt->mnt.susfs_mnt_id_backup)
+		return (int)orig_mnt->mnt.susfs_mnt_id_backup;
+	return orig_mnt ? orig_mnt->mnt_id : 0;
+}
 }
 #endif // #ifdef CONFIG_KSU_SUSFS_SUS_MOUNT
 

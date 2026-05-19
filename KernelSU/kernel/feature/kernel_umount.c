@@ -54,12 +54,6 @@ static const struct ksu_feature_handler kernel_umount_handler = {
 #ifdef CONFIG_KSU_SUSFS
 extern bool susfs_is_log_enabled;
 #ifdef CONFIG_KSU_SUSFS_SUS_MOUNT
-int susfs_get_non_sus_mnt_id_from_mnt(struct mount *orig_mnt)
-{
-	if (orig_mnt && orig_mnt->mnt.susfs_mnt_id_backup)
-		return (int)orig_mnt->mnt.susfs_mnt_id_backup;
-	return orig_mnt ? orig_mnt->mnt_id : 0;
-}
 bool susfs_is_current_zygote_domain(void)
 {
 	return !susfs_is_current_proc_umounted();
