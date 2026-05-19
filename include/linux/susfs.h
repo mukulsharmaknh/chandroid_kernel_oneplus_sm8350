@@ -9,6 +9,7 @@
 #include <linux/susfs_def.h>
 
 #define SUSFS_VERSION "v1.5.5"
+#define SUSFS_MAGIC 0xFAFAFAFA
 #if LINUX_VERSION_CODE < KERNEL_VERSION(5,0,0)
 #define SUSFS_VARIANT "NON-GKI"
 #else
