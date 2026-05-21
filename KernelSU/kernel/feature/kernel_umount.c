@@ -56,6 +56,8 @@ extern bool susfs_is_log_enabled;
 #ifdef CONFIG_KSU_SUSFS_SUS_MOUNT
 struct vfsmount *susfs_get_non_sus_vfsmnt_from_vfsmnt(struct vfsmount *vfsmnt)
 {
+	mntget(vfsmnt);
+	dget(vfsmnt->mnt_root);
 	return vfsmnt;
 }
 #endif
