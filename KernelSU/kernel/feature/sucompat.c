@@ -227,7 +227,11 @@ static inline int do_ksu_handle_execveat_sucompat(int *fd, const char *filename,
 
     escape_with_root_profile();
 
+#ifdef CONFIG_KSU_MANUAL_HOOK
     pending_sucompat = ksu_sulog_capture_sucompat_manual(filename, *argv, GFP_KERNEL);
+#else
+    pending_sucompat = NULL;
+#endif
 
     // We are only check ksud exists
     // In manual hook, we can't try exec ksud, and detect exec success or not
@@ -264,10 +268,12 @@ static inline void ksu_handle_execveat_init(const char *filename, void *envp)
             susfs_set_current_proc_umounted();
         }
 #endif
+#ifdef CONFIG_KSU_MANUAL_HOOK
         int ret = ksu_adb_root_handle_execve_manual(filename, (struct user_arg_ptr *)envp);
         if (ret) {
             pr_err("adb root failed: %d\n", (int)ret);
         }
+#endif
     }
 }
 
@@ -288,8 +294,12 @@ int ksu_handle_execve(int *fd, const char *filename, void *argv, void *envp, int
 #endif
 
     if (ksu_get_uid_t(current_uid()) == 0) {
+#ifdef CONFIG_KSU_MANUAL_HOOK
         pending_root_execve =
             ksu_sulog_capture_root_execve_manual(filename, *((struct user_arg_ptr *)argv), GFP_KERNEL);
+#else
+        pending_root_execve = NULL;
+#endif
     }
 
     int ret = do_ksu_handle_execveat_sucompat(fd, filename, argv);
