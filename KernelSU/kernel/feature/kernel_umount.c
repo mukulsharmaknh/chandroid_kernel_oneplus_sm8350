@@ -201,4 +201,24 @@ struct vfsmount *susfs_get_non_sus_vfsmnt_from_vfsmnt(struct vfsmount *vfsmnt)
     dget(vfsmnt->mnt_root);
     return vfsmnt;
 }
+
+// v2.1.0-era stubs from June build: our patched fs/namespace.c calls these;
+// v2.1.0's kernel side does the auto-add work itself, so the driver side
+// is a notification no-op (rc3 no longer carries them at all).
+#ifdef CONFIG_KSU_SUSFS_AUTO_ADD_SUS_KSU_DEFAULT_MOUNT
+void susfs_auto_add_sus_ksu_default_mount(const char __user *to_pathname)
+{
+}
+#endif
+#ifdef CONFIG_KSU_SUSFS_AUTO_ADD_SUS_BIND_MOUNT
+int susfs_auto_add_sus_bind_mount(const char *pathname, struct path *path_target)
+{
+    return 0;
+}
+#endif
+#ifdef CONFIG_KSU_SUSFS_AUTO_ADD_TRY_UMOUNT_FOR_BIND_MOUNT
+void susfs_auto_add_try_umount_for_bind_mount(struct path *path)
+{
+}
+#endif
 #endif
