@@ -173,9 +173,8 @@ static void susfs_extra_works_stub(struct work_struct *work)
 
 struct work_struct susfs_extra_works = __WORK_INITIALIZER(susfs_extra_works, susfs_extra_works_stub);
 
-void susfs_set_current_proc_umounted(void)
-{
-}
+// susfs_set_current_proc_umounted comes from <linux/susfs_def.h> (static
+// inline, sets TIF_PROC_UMOUNTED) — do NOT define it here, v2.1.0 owns it.
 
 void susfs_set_current_proc_umounted_for_zygote_next(void)
 {
