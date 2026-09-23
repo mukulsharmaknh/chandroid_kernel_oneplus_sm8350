@@ -10,10 +10,7 @@
 #include <linux/printk.h>
 #include <linux/types.h>
 #include <linux/uaccess.h>
-
-#if LINUX_VERSION_CODE < KERNEL_VERSION(5, 9, 0) && !defined(KSU_HAS_PATH_UMOUNT)
-#include <linux/syscalls.h>
-#endif
+#include <linux/workqueue.h>
 
 #ifdef CONFIG_KSU_SUSFS
 #include <linux/susfs_def.h>
@@ -27,6 +24,7 @@
 #include "policy/feature.h"
 #include "runtime/ksud_boot.h"
 #include "ksu.h"
+#include "feature/sucompat.h"
 
 static bool ksu_kernel_umount_enabled = true;
 
@@ -51,28 +49,6 @@ static const struct ksu_feature_handler kernel_umount_handler = {
     .set_handler = kernel_umount_feature_set,
 };
 
-#ifdef CONFIG_KSU_SUSFS
-extern bool susfs_is_log_enabled;
-#ifdef CONFIG_KSU_SUSFS_SUS_MOUNT
-struct vfsmount *susfs_get_non_sus_vfsmnt_from_vfsmnt(struct vfsmount *vfsmnt)
-{
-	mntget(vfsmnt);
-	dget(vfsmnt->mnt_root);
-	return vfsmnt;
-}
-#endif
-#ifdef CONFIG_KSU_SUSFS_AUTO_ADD_SUS_KSU_DEFAULT_MOUNT
-void susfs_auto_add_sus_ksu_default_mount(const char __user *to_pathname) {}
-#endif
-#ifdef CONFIG_KSU_SUSFS_AUTO_ADD_SUS_BIND_MOUNT
-int susfs_auto_add_sus_bind_mount(const char *pathname, struct path *path_target) { return 0; }
-#endif
-#ifdef CONFIG_KSU_SUSFS_AUTO_ADD_TRY_UMOUNT_FOR_BIND_MOUNT
-void susfs_auto_add_try_umount_for_bind_mount(struct path *path) {}
-#endif
-#endif // #ifdef CONFIG_KSU_SUSFS
-
-#if LINUX_VERSION_CODE >= KERNEL_VERSION(5, 9, 0) || defined(KSU_HAS_PATH_UMOUNT)
 extern int path_umount(struct path *path, int flags);
 static void ksu_umount_mnt(const char *mnt, struct path *path, int flags)
 {
@@ -81,29 +57,6 @@ static void ksu_umount_mnt(const char *mnt, struct path *path, int flags)
         pr_info("umount %s failed: %d\n", mnt, err);
     }
 }
-#else
-static void ksu_sys_umount(const char *mnt, int flags)
-{
-    char __user *usermnt = (char __user *)mnt;
-    mm_segment_t old_fs;
-
-    old_fs = get_fs();
-    set_fs(KERNEL_DS);
-#if LINUX_VERSION_CODE >= KERNEL_VERSION(4, 17, 0)
-    ksys_umount(usermnt, flags);
-#else
-    sys_umount(usermnt, flags); // cuz asmlinkage long sys##name
-#endif
-    set_fs(old_fs);
-}
-
-#define ksu_umount_mnt(mnt, __unused, flags)                                                                           \
-    ({                                                                                                                 \
-        path_put(__unused);                                                                                            \
-        ksu_sys_umount(mnt, flags);                                                                                    \
-    })
-
-#endif
 
 void try_umount(const char *mnt, int flags)
 {
@@ -123,11 +76,7 @@ void try_umount(const char *mnt, int flags)
 }
 
 #ifdef CONFIG_KSU_SUSFS
-static void susfs_extra_work_handler(struct work_struct *work)
-{
-}
-
-static DECLARE_WORK(susfs_extra_works, susfs_extra_work_handler);
+extern struct work_struct susfs_extra_works;
 #endif
 
 static void do_umount_for_current_task()
@@ -149,18 +98,14 @@ int ksu_handle_umount(uid_t old_uid, uid_t new_uid)
     const struct cred *saved;
     struct mount_entry *entry;
 
-    if (!ksu_cred) {
-        return 0;
-    }
-
     // There are 6 scenarios:
     // 1. Normal app: zygote -> appuid
     // 2. Isolated process forked from zygote: zygote -> isolated_process
     // 3. App zygote forked from zygote: zygote -> appuid
-    // 4. Webview zygote forked from zygote: zygote -> WEBVIEW_ZYGOTE_UID (no need to handle, app cannot run custom code)
+    // 4. Webview zygote forked from zygote: zygote -> webview_zygote
     // 5. Isolated process forked from app zygote: appuid -> isolated_process (already handled by 3)
-    // 6. Isolated process forked from webview zygote (no need to handle, app cannot run custom code)
-    if (!is_appuid(new_uid) && !is_isolated_process(new_uid)) {
+    // 6. Isolated process forked from webview zygote (already handled by 4)
+    if (!is_appuid(new_uid) && new_uid != WEBVIEW_ZYGOTE_UID && !is_isolated_process(new_uid)) {
         return 0;
     }
 
@@ -197,7 +142,8 @@ int ksu_handle_umount(uid_t old_uid, uid_t new_uid)
 skip_umount_task:
     // do susfs setuid when susfs enabled
 #ifdef CONFIG_KSU_SUSFS
-    schedule_work(&susfs_extra_works);
+    if (!work_pending(&susfs_extra_works))
+        schedule_work(&susfs_extra_works);
     susfs_set_current_proc_umounted();
 #endif
 
@@ -215,3 +161,45 @@ void __exit ksu_kernel_umount_exit(void)
 {
     ksu_unregister_feature_handler(KSU_FEATURE_KERNEL_UMOUNT);
 }
+
+// Mukul 9RT: SUSFS v2.1.0 compat stubs.
+// The v4.2 driver expects v2.3.0-era susfs symbols that our v2.1.0 tree
+// doesn't export. v2.1.0 tracks proc state itself (uid_scheme, its own
+// exec hooks), so these are safe no-ops by design.
+#ifdef CONFIG_KSU_SUSFS
+static void susfs_extra_works_stub(struct work_struct *work)
+{
+}
+
+struct work_struct susfs_extra_works = __WORK_INITIALIZER(susfs_extra_works, susfs_extra_works_stub);
+
+void susfs_set_current_proc_umounted(void)
+{
+}
+
+void susfs_set_current_proc_umounted_for_zygote_next(void)
+{
+}
+
+void susfs_set_current_proc_no_su(void)
+{
+}
+
+void susfs_clear_current_proc_no_su(void)
+{
+}
+
+bool susfs_is_current_proc_no_su(void)
+{
+    return false;
+}
+
+// v2.1.0-era stub kept from June build: our patched fs/statfs.c calls this
+// and always dput/mntput the returned vfsmount, so we must take references.
+struct vfsmount *susfs_get_non_sus_vfsmnt_from_vfsmnt(struct vfsmount *vfsmnt)
+{
+    mntget(vfsmnt);
+    dget(vfsmnt->mnt_root);
+    return vfsmnt;
+}
+#endif

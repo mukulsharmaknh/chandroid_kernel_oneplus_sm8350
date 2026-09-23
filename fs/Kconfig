@@ -337,4 +337,8 @@ source "fs/unicode/Kconfig"
 config FS_HPB
 	bool "Support HPB on Filesystem"
 	default n
+
+# Mukul 9RT: NoMount path-redirection subsystem (maxsteeel/nomount)
+source "fs/nomount/Kconfig"
+
 endmenu

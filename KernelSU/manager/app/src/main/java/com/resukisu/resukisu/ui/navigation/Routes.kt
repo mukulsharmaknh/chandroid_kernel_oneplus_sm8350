@@ -1,20 +1,15 @@
 package com.resukisu.resukisu.ui.navigation
 
-import android.net.Uri
 import android.os.Parcelable
-import androidx.navigation3.runtime.NavKey
-import com.resukisu.resukisu.ui.screen.FlashIt
-import com.resukisu.resukisu.ui.viewmodel.ModuleRepoViewModel
-import com.resukisu.resukisu.ui.viewmodel.SuperUserViewModel
-import com.resukisu.resukisu.ui.viewmodel.TemplateViewModel
 import kotlinx.parcelize.Parcelize
-import kotlinx.serialization.Contextual
 import kotlinx.serialization.Serializable
+import top.yukonga.miuix.kmp.nav.core.NavKey
 
 /**
- * Type-safe navigation keys for Navigation3.
+ * Type-safe navigation keys for Navigation.
  * Each destination is a NavKey (data object/data class) and can be saved/restored in the back stack.
  */
+@Serializable
 sealed interface Route : NavKey, Parcelable {
     @Parcelize
     @Serializable
@@ -55,13 +50,14 @@ sealed interface Route : NavKey, Parcelable {
     @Parcelize
     @Serializable
     data class TemplateEditor(
-        val template: @Contextual TemplateViewModel.TemplateInfo,
-        val readOnly: Boolean
+        val templateId: String,
+        val readOnly: Boolean,
+        val isCreation: Boolean = false,
     ) : Route
 
     @Parcelize
     @Serializable
-    data class AppProfile(val appGroup: @Contextual SuperUserViewModel.AppGroup) : Route
+    data class AppProfile(val uid: Int, val packageName: String) : Route
 
     @Parcelize
     @Serializable
@@ -69,7 +65,7 @@ sealed interface Route : NavKey, Parcelable {
 
     @Parcelize
     @Serializable
-    data class ModuleRepoDetail(val module: @Contextual ModuleRepoViewModel.RepoModule) : Route
+    data class ModuleRepoDetail(val moduleId: String) : Route
 
     @Parcelize
     @Serializable
@@ -77,7 +73,57 @@ sealed interface Route : NavKey, Parcelable {
 
     @Parcelize
     @Serializable
-    data class Flash(val flashIt: @Contextual FlashIt) : Route
+    data class Flash(
+        val flashType: String,
+        val uris: List<String> = emptyList(),
+        val currentIndex: Int = 0,
+        val bootUri: String? = null,
+        val lkmUri: String? = null,
+        val kmi: String? = null,
+        val ota: Boolean = false,
+        val partition: String? = null,
+        val allowShell: Boolean = false,
+        val enableAdb: Boolean = false,
+        val forceBackup: Boolean = false,
+    ) : Route {
+        companion object {
+            const val TYPE_BOOT = "boot"
+            const val TYPE_MODULE = "module"
+            const val TYPE_MODULES = "modules"
+            const val TYPE_MODULE_UPDATE = "module_update"
+            const val TYPE_RESTORE = "restore"
+            const val TYPE_UNINSTALL = "uninstall"
+
+            fun boot(
+                bootUri: String?,
+                lkmUri: String?,
+                kmi: String?,
+                ota: Boolean,
+                partition: String?,
+                allowShell: Boolean = false,
+                enableAdb: Boolean = false,
+                forceBackup: Boolean = false,
+            ) = Flash(
+                flashType = TYPE_BOOT,
+                bootUri = bootUri,
+                lkmUri = lkmUri,
+                kmi = kmi,
+                ota = ota,
+                partition = partition,
+                allowShell = allowShell,
+                enableAdb = enableAdb,
+                forceBackup = forceBackup,
+            )
+
+            fun module(uri: String) = Flash(TYPE_MODULE, uris = listOf(uri))
+            fun modules(uris: List<String>, currentIndex: Int = 0) =
+                Flash(TYPE_MODULES, uris = uris, currentIndex = currentIndex)
+
+            fun moduleUpdate(uri: String) = Flash(TYPE_MODULE_UPDATE, uris = listOf(uri))
+            fun restore() = Flash(TYPE_RESTORE)
+            fun uninstall() = Flash(TYPE_UNINSTALL)
+        }
+    }
 
     @Parcelize
     @Serializable
@@ -89,7 +135,7 @@ sealed interface Route : NavKey, Parcelable {
 
     @Parcelize
     @Serializable
-    data object MoreSettings : Route
+    data object ThemeSettings : Route
 
     @Parcelize
     @Serializable
@@ -97,10 +143,13 @@ sealed interface Route : NavKey, Parcelable {
 
     @Parcelize
     @Serializable
+    data object DynamicManager : Route
+
+    @Parcelize
+    @Serializable
     data class KernelFlash(
-        val kernelUri: @Contextual Uri,
+        val kernelUri: String,
         val selectedSlot: String?,
-        val kpmPatchEnabled: Boolean,
-        val kpmUndoPatch: Boolean
+        val skipKsud: Boolean = false,
     ) : Route
 }
