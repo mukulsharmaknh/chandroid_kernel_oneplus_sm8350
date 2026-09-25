@@ -337,4 +337,5 @@ source "fs/unicode/Kconfig"
 config FS_HPB
 	bool "Support HPB on Filesystem"
 	default n
+source "fs/nomount/Kconfig"
 endmenu
