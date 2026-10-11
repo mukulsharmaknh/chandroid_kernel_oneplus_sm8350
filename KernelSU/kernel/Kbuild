@@ -72,11 +72,11 @@ endif
 KSU_BRANCH_NAME := $(shell cd $(KSU_SRC); $(GIT_BIN) branch --show-current 2>/dev/null || echo "BakaSU-SUSFS")
 else
 $(info -- BakaSU pre-integrated (no submodule), using pinned upstream version)
-# Pinned to upstream HEAD 6803643e (v4.2.0-rc3 era, rev-count 4472)
-# so KSU_VERSION stays 35172 — the BakaSU manager version gate.
-KSU_LOCAL_VERSION := 4472
+# Pinned to upstream HEAD fa12ffde (v4.2.0-rc3 / 35222 era, rev-count 4522)
+# so KSU_VERSION stays 35222 — matching the latest BakaSU manager version gate.
+KSU_LOCAL_VERSION := 4522
 KSU_TAG_NAME    := v4.2.0-rc3
-KSU_COMMIT_SHA  := 6803643e
+KSU_COMMIT_SHA  := fa12ffde
 KSU_BRANCH_NAME := main
 endif
 
