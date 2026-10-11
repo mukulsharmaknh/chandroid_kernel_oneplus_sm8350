@@ -1,4 +1,4 @@
-package com.resukisu.resukisu.ui.component.settings
+package com.bakasu.bakasu.ui.component.settings
 
 import android.R
 import android.os.Build
@@ -104,7 +104,7 @@ import androidx.compose.ui.unit.Density
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.zIndex
-import com.resukisu.resukisu.ui.theme.CardConfig
+import com.bakasu.bakasu.ui.theme.CardConfig
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 

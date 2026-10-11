@@ -1,5 +1,5 @@
 // IKsuInterface.aidl
-package com.resukisu.zako;
+package com.bakasu.zako;
 
 import android.content.pm.PackageInfo;
 import java.util.List;

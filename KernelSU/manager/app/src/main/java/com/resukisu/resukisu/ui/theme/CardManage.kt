@@ -1,4 +1,4 @@
-package com.resukisu.resukisu.ui.theme
+package com.bakasu.bakasu.ui.theme
 
 import android.content.Context
 import androidx.compose.foundation.isSystemInDarkTheme

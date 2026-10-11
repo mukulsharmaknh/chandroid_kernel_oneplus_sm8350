@@ -1,12 +1,12 @@
-package com.resukisu.resukisu.ui.navigation
+package com.bakasu.bakasu.ui.navigation
 
 import android.net.Uri
 import android.os.Parcelable
 import androidx.navigation3.runtime.NavKey
-import com.resukisu.resukisu.ui.screen.FlashIt
-import com.resukisu.resukisu.ui.viewmodel.ModuleRepoViewModel
-import com.resukisu.resukisu.ui.viewmodel.SuperUserViewModel
-import com.resukisu.resukisu.ui.viewmodel.TemplateViewModel
+import com.bakasu.bakasu.ui.screen.FlashIt
+import com.bakasu.bakasu.ui.viewmodel.ModuleRepoViewModel
+import com.bakasu.bakasu.ui.viewmodel.SuperUserViewModel
+import com.bakasu.bakasu.ui.viewmodel.TemplateViewModel
 import kotlinx.parcelize.Parcelize
 import kotlinx.serialization.Contextual
 import kotlinx.serialization.Serializable

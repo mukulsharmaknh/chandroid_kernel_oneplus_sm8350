@@ -1,4 +1,4 @@
-package com.resukisu.resukisu.ui.viewmodel
+package com.bakasu.bakasu.ui.viewmodel
 
 import android.os.Parcelable
 import android.util.Log
@@ -10,12 +10,12 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.resukisu.resukisu.R
-import com.resukisu.resukisu.ksuApp
-import com.resukisu.resukisu.ui.util.module.ReleaseInfo
-import com.resukisu.resukisu.ui.util.module.fetchModuleDetail
-import com.resukisu.resukisu.ui.activity.util.isNetworkAvailable
-import com.resukisu.resukisu.ui.util.HanziToPinyin
+import com.bakasu.bakasu.R
+import com.bakasu.bakasu.ksuApp
+import com.bakasu.bakasu.ui.util.module.ReleaseInfo
+import com.bakasu.bakasu.ui.util.module.fetchModuleDetail
+import com.bakasu.bakasu.ui.activity.util.isNetworkAvailable
+import com.bakasu.bakasu.ui.util.HanziToPinyin
 import com.topjohnwu.superuser.io.SuFile
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.async

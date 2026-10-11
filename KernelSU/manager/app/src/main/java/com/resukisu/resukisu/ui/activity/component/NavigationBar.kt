@@ -1,4 +1,4 @@
-package com.resukisu.resukisu.ui.activity.component
+package com.bakasu.bakasu.ui.activity.component
 
 import android.annotation.SuppressLint
 import androidx.compose.animation.AnimatedVisibility
@@ -35,16 +35,16 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
-import com.resukisu.resukisu.ui.MainActivity
-import com.resukisu.resukisu.ui.screen.BottomBarDestination
-import com.resukisu.resukisu.ui.theme.CardConfig
-import com.resukisu.resukisu.ui.theme.ThemeConfig
-import com.resukisu.resukisu.ui.theme.blurEffect
-import com.resukisu.resukisu.ui.util.LocalHandlePageChange
-import com.resukisu.resukisu.ui.util.LocalSelectedPage
-import com.resukisu.resukisu.ui.util.getKpmModuleCount
-import com.resukisu.resukisu.ui.util.getModuleCount
-import com.resukisu.resukisu.ui.util.getSuperuserCount
+import com.bakasu.bakasu.ui.MainActivity
+import com.bakasu.bakasu.ui.screen.BottomBarDestination
+import com.bakasu.bakasu.ui.theme.CardConfig
+import com.bakasu.bakasu.ui.theme.ThemeConfig
+import com.bakasu.bakasu.ui.theme.blurEffect
+import com.bakasu.bakasu.ui.util.LocalHandlePageChange
+import com.bakasu.bakasu.ui.util.LocalSelectedPage
+import com.bakasu.bakasu.ui.util.getKpmModuleCount
+import com.bakasu.bakasu.ui.util.getModuleCount
+import com.bakasu.bakasu.ui.util.getSuperuserCount
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.withContext

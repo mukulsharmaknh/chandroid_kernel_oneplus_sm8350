@@ -1,4 +1,4 @@
-package com.resukisu.resukisu.profile
+package com.bakasu.bakasu.profile
 
 /**
  * https://cs.android.com/android/platform/superproject/main/+/main:system/core/libcutils/include/private/android_filesystem_config.h

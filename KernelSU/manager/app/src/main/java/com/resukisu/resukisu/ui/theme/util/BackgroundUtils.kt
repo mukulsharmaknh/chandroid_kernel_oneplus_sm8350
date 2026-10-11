@@ -1,4 +1,4 @@
-package com.resukisu.resukisu.ui.theme.util
+package com.bakasu.bakasu.ui.theme.util
 
 import android.content.ContentResolver
 import android.content.Context

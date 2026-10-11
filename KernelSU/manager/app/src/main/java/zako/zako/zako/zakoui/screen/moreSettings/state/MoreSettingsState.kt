@@ -8,9 +8,9 @@ import androidx.compose.runtime.mutableFloatStateOf
 import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
-import com.resukisu.resukisu.R
-import com.resukisu.resukisu.ui.theme.CardConfig
-import com.resukisu.resukisu.ui.theme.ThemeConfig
+import com.bakasu.bakasu.R
+import com.bakasu.bakasu.ui.theme.CardConfig
+import com.bakasu.bakasu.ui.theme.ThemeConfig
 import zako.zako.zako.zakoui.screen.moreSettings.util.LocaleHelper
 
 /**

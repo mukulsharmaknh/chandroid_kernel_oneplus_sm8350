@@ -1,4 +1,4 @@
-package com.resukisu.resukisu.ui.component
+package com.bakasu.bakasu.ui.component
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.core.FastOutSlowInEasing
@@ -46,7 +46,7 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import com.resukisu.resukisu.R
+import com.bakasu.bakasu.R
 
 data class FabMenuItem(
     val icon: ImageVector,

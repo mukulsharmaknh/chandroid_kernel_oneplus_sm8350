@@ -37,7 +37,7 @@ val isReleaseTask =
     project.gradle.startParameter.taskNames.any { it.contains("Release", ignoreCase = true) }
 
 android {
-    namespace = "com.resukisu.resukisu"
+    namespace = "com.bakasu.bakasu"
 
     buildTypes {
         debug {
@@ -161,7 +161,7 @@ android {
 
 base {
     archivesName.set(
-        "ReSukiSU_${managerVersionName}_${managerVersionCode}"
+        "BakaSU_${managerVersionName}_${managerVersionCode}"
     )
 }
 

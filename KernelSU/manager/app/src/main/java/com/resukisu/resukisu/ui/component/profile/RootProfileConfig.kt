@@ -1,4 +1,4 @@
-package com.resukisu.resukisu.ui.component.profile
+package com.bakasu.bakasu.ui.component.profile
 
 import androidx.compose.foundation.layout.ExperimentalLayoutApi
 import androidx.compose.foundation.layout.FlowRow
@@ -36,17 +36,17 @@ import com.maxkeppeler.sheets.input.models.ValidationResult
 import com.maxkeppeler.sheets.list.ListDialog
 import com.maxkeppeler.sheets.list.models.ListOption
 import com.maxkeppeler.sheets.list.models.ListSelection
-import com.resukisu.resukisu.Natives
-import com.resukisu.resukisu.R
-import com.resukisu.resukisu.profile.Capabilities
-import com.resukisu.resukisu.profile.Groups
-import com.resukisu.resukisu.ui.component.rememberCustomDialog
-import com.resukisu.resukisu.ui.component.settings.SettingsDropdownWidget
-import com.resukisu.resukisu.ui.component.settings.SettingsJumpPageWidget
-import com.resukisu.resukisu.ui.component.settings.SettingsTextFieldWidget
-import com.resukisu.resukisu.ui.component.settings.SplicedColumnGroup
-import com.resukisu.resukisu.ui.component.settings.SplicedGroupScope
-import com.resukisu.resukisu.ui.util.isSepolicyValid
+import com.bakasu.bakasu.Natives
+import com.bakasu.bakasu.R
+import com.bakasu.bakasu.profile.Capabilities
+import com.bakasu.bakasu.profile.Groups
+import com.bakasu.bakasu.ui.component.rememberCustomDialog
+import com.bakasu.bakasu.ui.component.settings.SettingsDropdownWidget
+import com.bakasu.bakasu.ui.component.settings.SettingsJumpPageWidget
+import com.bakasu.bakasu.ui.component.settings.SettingsTextFieldWidget
+import com.bakasu.bakasu.ui.component.settings.SplicedColumnGroup
+import com.bakasu.bakasu.ui.component.settings.SplicedGroupScope
+import com.bakasu.bakasu.ui.util.isSepolicyValid
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable

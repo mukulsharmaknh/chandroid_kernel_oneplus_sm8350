@@ -1,4 +1,4 @@
-package com.resukisu.resukisu.ui.viewmodel
+package com.bakasu.bakasu.ui.viewmodel
 
 import android.util.Log
 import androidx.compose.runtime.getValue
@@ -6,11 +6,11 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.resukisu.resukisu.ui.util.controlKpmModule
-import com.resukisu.resukisu.ui.util.getKpmModuleCount
-import com.resukisu.resukisu.ui.util.getKpmModuleInfo
-import com.resukisu.resukisu.ui.util.getKpmVersion
-import com.resukisu.resukisu.ui.util.listKpmModules
+import com.bakasu.bakasu.ui.util.controlKpmModule
+import com.bakasu.bakasu.ui.util.getKpmModuleCount
+import com.bakasu.bakasu.ui.util.getKpmModuleInfo
+import com.bakasu.bakasu.ui.util.getKpmVersion
+import com.bakasu.bakasu.ui.util.listKpmModules
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext

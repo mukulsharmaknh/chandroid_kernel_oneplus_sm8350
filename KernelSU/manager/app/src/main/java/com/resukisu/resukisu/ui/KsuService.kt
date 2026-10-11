@@ -1,4 +1,4 @@
-package com.resukisu.resukisu.ui
+package com.bakasu.bakasu.ui
 
 import android.annotation.SuppressLint
 import android.content.Intent
@@ -7,7 +7,7 @@ import android.os.IBinder
 import android.os.UserHandle
 import android.os.UserManager
 import android.util.Log
-import com.resukisu.zako.IKsuInterface
+import com.bakasu.zako.IKsuInterface
 import com.topjohnwu.superuser.ipc.RootService
 
 /**

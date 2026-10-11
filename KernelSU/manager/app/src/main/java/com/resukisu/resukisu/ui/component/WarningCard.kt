@@ -1,4 +1,4 @@
-package com.resukisu.resukisu.ui.component
+package com.bakasu.bakasu.ui.component
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -31,8 +31,8 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.resukisu.resukisu.ui.theme.CardConfig
-import com.resukisu.resukisu.ui.theme.getCardElevation
+import com.bakasu.bakasu.ui.theme.CardConfig
+import com.bakasu.bakasu.ui.theme.getCardElevation
 
 @OptIn(ExperimentalMaterial3ExpressiveApi::class)
 @Composable

@@ -1,4 +1,4 @@
-package com.resukisu.resukisu.ui.navigation
+package com.bakasu.bakasu.ui.navigation
 
 import android.app.Activity
 import android.content.Intent
@@ -11,8 +11,8 @@ import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.platform.LocalContext
 import androidx.core.net.toUri
-import com.resukisu.resukisu.ui.screen.FlashIt
-import com.resukisu.resukisu.ui.util.downloader.DownloadService
+import com.bakasu.bakasu.ui.screen.FlashIt
+import com.bakasu.bakasu.ui.util.downloader.DownloadService
 
 /**
  * Deep link resolution: maps external Intent/Uri to an initial back stack.

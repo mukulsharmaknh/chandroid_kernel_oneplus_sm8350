@@ -1,4 +1,4 @@
-package com.resukisu.resukisu.ui.screen
+package com.bakasu.bakasu.ui.screen
 
 import android.annotation.SuppressLint
 import android.os.Environment
@@ -45,17 +45,17 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.unit.dp
-import com.resukisu.resukisu.R
-import com.resukisu.resukisu.ui.component.KeyEventBlocker
-import com.resukisu.resukisu.ui.component.SwipeableSnackbarHost
-import com.resukisu.resukisu.ui.component.settings.AppBackButton
-import com.resukisu.resukisu.ui.navigation.LocalNavigator
-import com.resukisu.resukisu.ui.theme.CardConfig
-import com.resukisu.resukisu.ui.theme.ThemeConfig
-import com.resukisu.resukisu.ui.theme.blurEffect
-import com.resukisu.resukisu.ui.theme.blurSource
-import com.resukisu.resukisu.ui.util.LocalSnackbarHost
-import com.resukisu.resukisu.ui.util.runModuleAction
+import com.bakasu.bakasu.R
+import com.bakasu.bakasu.ui.component.KeyEventBlocker
+import com.bakasu.bakasu.ui.component.SwipeableSnackbarHost
+import com.bakasu.bakasu.ui.component.settings.AppBackButton
+import com.bakasu.bakasu.ui.navigation.LocalNavigator
+import com.bakasu.bakasu.ui.theme.CardConfig
+import com.bakasu.bakasu.ui.theme.ThemeConfig
+import com.bakasu.bakasu.ui.theme.blurEffect
+import com.bakasu.bakasu.ui.theme.blurSource
+import com.bakasu.bakasu.ui.util.LocalSnackbarHost
+import com.bakasu.bakasu.ui.util.runModuleAction
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext

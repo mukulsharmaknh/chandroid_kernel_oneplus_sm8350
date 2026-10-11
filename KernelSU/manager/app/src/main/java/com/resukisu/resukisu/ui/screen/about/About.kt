@@ -1,4 +1,4 @@
-package com.resukisu.resukisu.ui.screen.about
+package com.bakasu.bakasu.ui.screen.about
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
@@ -49,19 +49,19 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.core.content.ContextCompat
 import com.google.accompanist.drawablepainter.rememberDrawablePainter
-import com.resukisu.resukisu.BuildConfig
-import com.resukisu.resukisu.R
-import com.resukisu.resukisu.ui.component.WarningCard
-import com.resukisu.resukisu.ui.component.settings.AppBackButton
-import com.resukisu.resukisu.ui.component.settings.SettingsJumpPageWidget
-import com.resukisu.resukisu.ui.component.settings.SplicedColumnGroup
-import com.resukisu.resukisu.ui.navigation.LocalNavigator
-import com.resukisu.resukisu.ui.navigation.Navigator
-import com.resukisu.resukisu.ui.navigation.Route
-import com.resukisu.resukisu.ui.theme.CardConfig
-import com.resukisu.resukisu.ui.theme.ThemeConfig
-import com.resukisu.resukisu.ui.theme.blurEffect
-import com.resukisu.resukisu.ui.theme.blurSource
+import com.bakasu.bakasu.BuildConfig
+import com.bakasu.bakasu.R
+import com.bakasu.bakasu.ui.component.WarningCard
+import com.bakasu.bakasu.ui.component.settings.AppBackButton
+import com.bakasu.bakasu.ui.component.settings.SettingsJumpPageWidget
+import com.bakasu.bakasu.ui.component.settings.SplicedColumnGroup
+import com.bakasu.bakasu.ui.navigation.LocalNavigator
+import com.bakasu.bakasu.ui.navigation.Navigator
+import com.bakasu.bakasu.ui.navigation.Route
+import com.bakasu.bakasu.ui.theme.CardConfig
+import com.bakasu.bakasu.ui.theme.ThemeConfig
+import com.bakasu.bakasu.ui.theme.blurEffect
+import com.bakasu.bakasu.ui.theme.blurSource
 
 @OptIn(ExperimentalMaterial3Api::class, ExperimentalMaterial3ExpressiveApi::class)
 @Composable
@@ -162,7 +162,7 @@ fun AboutScreen() {
                             icon = Icons.Rounded.Code,
                             title = stringResource(R.string.get_source_code),
                             description = stringResource(R.string.get_source_code_detail),
-                            onClick = { uriHandler.openUri("https://github.com/ReSukiSU/ReSukiSU") }
+                            onClick = { uriHandler.openUri("https://github.com/Baka-SU/BakaSU") }
                         )
                     }
                     item {
@@ -170,7 +170,7 @@ fun AboutScreen() {
                             icon = Icons.Rounded.Group,
                             title = stringResource(R.string.join_telegram_group),
                             description = stringResource(R.string.join_telegram_group_detail),
-                            onClick = { uriHandler.openUri("https://t.me/ReSukiSU") }
+                            onClick = { uriHandler.openUri("https://t.me/BakaSU") }
                         )
                     }
                     item {

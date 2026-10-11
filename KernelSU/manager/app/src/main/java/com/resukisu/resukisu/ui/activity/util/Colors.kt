@@ -1,4 +1,4 @@
-package com.resukisu.resukisu.ui.activity.util
+package com.bakasu.bakasu.ui.activity.util
 
 import kotlin.math.abs
 import kotlin.math.pow

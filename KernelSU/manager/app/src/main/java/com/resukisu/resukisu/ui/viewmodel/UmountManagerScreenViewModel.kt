@@ -1,4 +1,4 @@
-package com.resukisu.resukisu.ui.viewmodel
+package com.bakasu.bakasu.ui.viewmodel
 
 import android.content.Context
 import android.util.Log
@@ -8,13 +8,13 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.resukisu.resukisu.R
-import com.resukisu.resukisu.ui.util.addKernelUmountPath
-import com.resukisu.resukisu.ui.util.addUmountConfigUmountPath
-import com.resukisu.resukisu.ui.util.listKernelUmountPaths
-import com.resukisu.resukisu.ui.util.listUmountConfigUmountPaths
-import com.resukisu.resukisu.ui.util.removeKernelUmountPath
-import com.resukisu.resukisu.ui.util.removeUmountConfigUmountPath
+import com.bakasu.bakasu.R
+import com.bakasu.bakasu.ui.util.addKernelUmountPath
+import com.bakasu.bakasu.ui.util.addUmountConfigUmountPath
+import com.bakasu.bakasu.ui.util.listKernelUmountPaths
+import com.bakasu.bakasu.ui.util.listUmountConfigUmountPaths
+import com.bakasu.bakasu.ui.util.removeKernelUmountPath
+import com.bakasu.bakasu.ui.util.removeUmountConfigUmountPath
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.async
 import kotlinx.coroutines.launch

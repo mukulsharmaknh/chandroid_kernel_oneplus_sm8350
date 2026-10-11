@@ -1,4 +1,4 @@
-package com.resukisu.resukisu.ui.webui
+package com.bakasu.bakasu.ui.webui
 
 import android.annotation.SuppressLint
 import android.app.Activity
@@ -18,10 +18,10 @@ import android.webkit.WebResourceResponse
 import android.webkit.WebView
 import android.webkit.WebViewClient
 import androidx.webkit.WebViewAssetLoader
-import com.resukisu.resukisu.R
-import com.resukisu.resukisu.ui.util.createRootShell
-import com.resukisu.resukisu.ui.viewmodel.ModuleViewModel
-import com.resukisu.resukisu.ui.viewmodel.SuperUserViewModel
+import com.bakasu.bakasu.R
+import com.bakasu.bakasu.ui.util.createRootShell
+import com.bakasu.bakasu.ui.viewmodel.ModuleViewModel
+import com.bakasu.bakasu.ui.viewmodel.SuperUserViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.suspendCancellableCoroutine
 import kotlinx.coroutines.withContext

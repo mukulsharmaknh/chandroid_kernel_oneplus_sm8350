@@ -1,9 +1,9 @@
-package com.resukisu.resukisu.ui.util
+package com.bakasu.bakasu.ui.util
 
 import androidx.compose.foundation.pager.PagerState
 import androidx.compose.material3.SnackbarHostState
 import androidx.compose.runtime.compositionLocalOf
-import com.resukisu.resukisu.ui.activity.PermissionRequestInterface
+import com.bakasu.bakasu.ui.activity.PermissionRequestInterface
 import top.yukonga.miuix.kmp.blur.LayerBackdrop
 
 val LocalSnackbarHost = compositionLocalOf<SnackbarHostState> {

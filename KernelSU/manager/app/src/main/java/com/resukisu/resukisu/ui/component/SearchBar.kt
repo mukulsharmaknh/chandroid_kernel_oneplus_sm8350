@@ -1,4 +1,4 @@
-package com.resukisu.resukisu.ui.component
+package com.bakasu.bakasu.ui.component
 
 import android.os.Build
 import androidx.activity.compose.BackHandler
@@ -61,10 +61,10 @@ import androidx.compose.ui.platform.LocalFocusManager
 import androidx.compose.ui.platform.LocalSoftwareKeyboardController
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.resukisu.resukisu.ui.component.settings.AppBackButton
-import com.resukisu.resukisu.ui.theme.CardConfig
-import com.resukisu.resukisu.ui.theme.ThemeConfig
-import com.resukisu.resukisu.ui.theme.blurEffect
+import com.bakasu.bakasu.ui.component.settings.AppBackButton
+import com.bakasu.bakasu.ui.theme.CardConfig
+import com.bakasu.bakasu.ui.theme.ThemeConfig
+import com.bakasu.bakasu.ui.theme.blurEffect
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 

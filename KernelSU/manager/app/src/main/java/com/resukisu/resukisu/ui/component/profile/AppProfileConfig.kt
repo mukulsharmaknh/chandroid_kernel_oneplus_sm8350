@@ -1,4 +1,4 @@
-package com.resukisu.resukisu.ui.component.profile
+package com.bakasu.bakasu.ui.component.profile
 
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.rounded.FolderDelete
@@ -9,9 +9,9 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
-import com.resukisu.resukisu.Natives
-import com.resukisu.resukisu.R
-import com.resukisu.resukisu.ui.component.settings.SettingsSwitchWidget
+import com.bakasu.bakasu.Natives
+import com.bakasu.bakasu.R
+import com.bakasu.bakasu.ui.component.settings.SettingsSwitchWidget
 
 @Composable
 fun AppProfileConfig(

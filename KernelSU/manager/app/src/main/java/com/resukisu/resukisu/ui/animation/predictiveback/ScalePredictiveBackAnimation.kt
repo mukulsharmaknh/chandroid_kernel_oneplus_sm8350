@@ -1,4 +1,4 @@
-package com.resukisu.resukisu.ui.animation.predictiveback
+package com.bakasu.bakasu.ui.animation.predictiveback
 
 import androidx.compose.animation.AnimatedContentTransitionScope
 import androidx.compose.animation.ContentTransform
@@ -29,8 +29,8 @@ import androidx.navigation3.ui.LocalNavAnimatedContentScope
 import androidx.navigationevent.NavigationEvent.Companion.EDGE_LEFT
 import androidx.navigationevent.NavigationEventTransitionState
 import androidx.navigationevent.NavigationEventTransitionState.InProgress
-import com.resukisu.resukisu.ui.MainActivity
-import com.resukisu.resukisu.ui.util.rememberDeviceCornerRadius
+import com.bakasu.bakasu.ui.MainActivity
+import com.bakasu.bakasu.ui.util.rememberDeviceCornerRadius
 import kotlinx.coroutines.CoroutineScope
 
 class ScalePredictiveBackAnimation(

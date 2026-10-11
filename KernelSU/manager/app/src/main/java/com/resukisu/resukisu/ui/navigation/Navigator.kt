@@ -1,4 +1,4 @@
-package com.resukisu.resukisu.ui.navigation
+package com.bakasu.bakasu.ui.navigation
 
 import android.util.Log
 import androidx.compose.runtime.Composable

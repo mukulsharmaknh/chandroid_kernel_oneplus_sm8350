@@ -1,4 +1,4 @@
-package com.resukisu.resukisu.ui.susfs.component
+package com.bakasu.bakasu.ui.susfs.component
 
 import android.annotation.SuppressLint
 import androidx.compose.foundation.layout.Arrangement
@@ -37,9 +37,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import com.resukisu.resukisu.R
-import com.resukisu.resukisu.ui.susfs.util.SuSFSManager
-import com.resukisu.resukisu.ui.viewmodel.SuperUserViewModel
+import com.bakasu.bakasu.R
+import com.bakasu.bakasu.ui.susfs.util.SuSFSManager
+import com.bakasu.bakasu.ui.viewmodel.SuperUserViewModel
 
 // TODO REFACTOR!!! there are fully shit, we should refactor them after susfs-ksud branch merge
 

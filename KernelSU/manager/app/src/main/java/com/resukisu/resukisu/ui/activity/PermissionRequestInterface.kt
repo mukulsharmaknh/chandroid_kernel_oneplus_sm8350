@@ -1,4 +1,4 @@
-package com.resukisu.resukisu.ui.activity
+package com.bakasu.bakasu.ui.activity
 
 import androidx.activity.compose.ManagedActivityResultLauncher
 

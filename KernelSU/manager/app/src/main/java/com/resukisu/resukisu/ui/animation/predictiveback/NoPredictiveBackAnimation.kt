@@ -1,4 +1,4 @@
-package com.resukisu.resukisu.ui.animation.predictiveback
+package com.bakasu.bakasu.ui.animation.predictiveback
 
 import androidx.activity.compose.BackHandler
 import androidx.compose.animation.AnimatedContentTransitionScope
@@ -12,7 +12,7 @@ import androidx.navigation3.scene.Scene
 import androidx.navigation3.ui.defaultPopTransitionSpec
 import androidx.navigation3.ui.defaultTransitionSpec
 import androidx.navigationevent.NavigationEventTransitionState
-import com.resukisu.resukisu.ui.navigation.LocalNavigator
+import com.bakasu.bakasu.ui.navigation.LocalNavigator
 
 class NoPredictiveBackAnimation : PredictiveBackAnimationHandler {
     override suspend fun onBackPressed(

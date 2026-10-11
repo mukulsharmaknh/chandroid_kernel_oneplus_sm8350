@@ -1,4 +1,4 @@
-package com.resukisu.resukisu
+package com.bakasu.bakasu
 
 import android.annotation.SuppressLint
 import android.app.Application
@@ -9,10 +9,10 @@ import androidx.lifecycle.ViewModelStore
 import androidx.lifecycle.ViewModelStoreOwner
 import coil.Coil
 import coil.ImageLoader
-import com.resukisu.resukisu.ui.util.generateMainShellBuilder
-import com.resukisu.resukisu.ui.viewmodel.HomeViewModel
-import com.resukisu.resukisu.ui.viewmodel.ModuleViewModel
-import com.resukisu.resukisu.ui.viewmodel.SuperUserViewModel
+import com.bakasu.bakasu.ui.util.generateMainShellBuilder
+import com.bakasu.bakasu.ui.viewmodel.HomeViewModel
+import com.bakasu.bakasu.ui.viewmodel.ModuleViewModel
+import com.bakasu.bakasu.ui.viewmodel.SuperUserViewModel
 import com.topjohnwu.superuser.internal.MainShell
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -30,7 +30,7 @@ lateinit var ksuApp: KernelSUApplication
 class KernelSUApplication : Application(), ViewModelStoreOwner {
 
     lateinit var okhttpClient: OkHttpClient
-    val UserAgent = "ReSukiSU/${BuildConfig.VERSION_CODE}"
+    val UserAgent = "BakaSU/${BuildConfig.VERSION_CODE}"
     private val appViewModelStore by lazy { ViewModelStore() }
 
     @SuppressLint("RestrictedApi")

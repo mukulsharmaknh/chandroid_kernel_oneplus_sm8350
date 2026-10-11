@@ -1,11 +1,11 @@
-package com.resukisu.resukisu.ui.util.module
+package com.bakasu.bakasu.ui.util.module
 
 import android.content.Context
 import android.content.ContentResolver
 import android.content.Intent
 import android.net.Uri
 import android.util.Log
-import com.resukisu.resukisu.R
+import com.bakasu.bakasu.R
 import java.util.Properties
 import java.util.zip.ZipEntry
 import java.util.zip.ZipInputStream

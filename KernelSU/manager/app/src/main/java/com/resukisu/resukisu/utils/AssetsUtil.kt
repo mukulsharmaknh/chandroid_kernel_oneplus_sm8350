@@ -1,4 +1,4 @@
-package com.resukisu.resukisu.utils
+package com.bakasu.bakasu.utils
 
 import android.content.Context
 import java.io.File

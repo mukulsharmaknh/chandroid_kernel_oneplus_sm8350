@@ -1,4 +1,4 @@
-package com.resukisu.resukisu.magica;
+package com.bakasu.bakasu.magica;
 
 import android.app.Service;
 import android.content.Intent;

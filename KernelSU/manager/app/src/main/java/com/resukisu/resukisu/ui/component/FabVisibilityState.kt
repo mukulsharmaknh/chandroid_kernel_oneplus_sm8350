@@ -1,4 +1,4 @@
-package com.resukisu.resukisu.ui.component
+package com.bakasu.bakasu.ui.component
 
 import android.annotation.SuppressLint
 import androidx.compose.animation.AnimatedVisibility

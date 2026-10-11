@@ -1,4 +1,4 @@
-package com.resukisu.resukisu.ui.component
+package com.bakasu.bakasu.ui.component
 
 import android.content.Context
 import android.net.Uri
@@ -35,7 +35,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import com.resukisu.resukisu.R
+import com.bakasu.bakasu.R
 import java.io.BufferedReader
 import java.io.IOException
 import java.io.InputStream

@@ -1,7 +1,7 @@
-package com.resukisu.resukisu.ui.util
+package com.bakasu.bakasu.ui.util
 
 import android.content.Context
-import com.resukisu.resukisu.R
+import com.bakasu.bakasu.R
 import com.topjohnwu.superuser.Shell
 import com.topjohnwu.superuser.io.SuFile
 

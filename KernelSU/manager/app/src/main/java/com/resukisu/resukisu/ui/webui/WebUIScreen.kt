@@ -1,4 +1,4 @@
-package com.resukisu.resukisu.ui.webui
+package com.bakasu.bakasu.ui.webui
 
 import android.app.Activity
 import android.net.Uri
@@ -44,8 +44,8 @@ import androidx.compose.ui.viewinterop.AndroidView
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleEventObserver
 import androidx.lifecycle.compose.LocalLifecycleOwner
-import com.resukisu.resukisu.R
-import com.resukisu.resukisu.ui.component.settings.SettingsTextFieldWidget
+import com.bakasu.bakasu.R
+import com.bakasu.bakasu.ui.component.settings.SettingsTextFieldWidget
 
 @Composable
 fun WebUIScreen(webUIState: WebUIState) {

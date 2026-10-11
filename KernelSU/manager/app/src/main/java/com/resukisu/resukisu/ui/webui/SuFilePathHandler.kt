@@ -1,12 +1,12 @@
-package com.resukisu.resukisu.ui.webui
+package com.bakasu.bakasu.ui.webui
 
 import android.content.Context
 import android.util.Log
 import android.webkit.WebResourceResponse
 import androidx.annotation.WorkerThread
 import androidx.webkit.WebViewAssetLoader
-import com.resukisu.resukisu.ui.webui.MonetColorsProvider.getColorsCss
-import com.resukisu.resukisu.ui.webui.SuFilePathHandler.Companion.DEFAULT_MIME_TYPE
+import com.bakasu.bakasu.ui.webui.MonetColorsProvider.getColorsCss
+import com.bakasu.bakasu.ui.webui.SuFilePathHandler.Companion.DEFAULT_MIME_TYPE
 import com.topjohnwu.superuser.Shell
 import com.topjohnwu.superuser.io.SuFile
 import com.topjohnwu.superuser.io.SuFileInputStream

@@ -1,4 +1,4 @@
-package com.resukisu.resukisu.ui.screen
+package com.bakasu.bakasu.ui.screen
 
 import android.widget.Toast
 import androidx.compose.foundation.layout.Column
@@ -45,20 +45,20 @@ import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.dropUnlessResumed
-import com.resukisu.resukisu.Natives
-import com.resukisu.resukisu.R
-import com.resukisu.resukisu.ui.component.profile.rootProfileConfig
-import com.resukisu.resukisu.ui.component.settings.AppBackButton
-import com.resukisu.resukisu.ui.component.settings.SettingsTextFieldWidget
-import com.resukisu.resukisu.ui.component.settings.SplicedColumnGroup
-import com.resukisu.resukisu.ui.navigation.LocalNavigator
-import com.resukisu.resukisu.ui.theme.blurEffect
-import com.resukisu.resukisu.ui.theme.blurSource
-import com.resukisu.resukisu.ui.util.deleteAppProfileTemplate
-import com.resukisu.resukisu.ui.util.getAppProfileTemplate
-import com.resukisu.resukisu.ui.util.setAppProfileTemplate
-import com.resukisu.resukisu.ui.viewmodel.TemplateViewModel
-import com.resukisu.resukisu.ui.viewmodel.toJSON
+import com.bakasu.bakasu.Natives
+import com.bakasu.bakasu.R
+import com.bakasu.bakasu.ui.component.profile.rootProfileConfig
+import com.bakasu.bakasu.ui.component.settings.AppBackButton
+import com.bakasu.bakasu.ui.component.settings.SettingsTextFieldWidget
+import com.bakasu.bakasu.ui.component.settings.SplicedColumnGroup
+import com.bakasu.bakasu.ui.navigation.LocalNavigator
+import com.bakasu.bakasu.ui.theme.blurEffect
+import com.bakasu.bakasu.ui.theme.blurSource
+import com.bakasu.bakasu.ui.util.deleteAppProfileTemplate
+import com.bakasu.bakasu.ui.util.getAppProfileTemplate
+import com.bakasu.bakasu.ui.util.setAppProfileTemplate
+import com.bakasu.bakasu.ui.viewmodel.TemplateViewModel
+import com.bakasu.bakasu.ui.viewmodel.toJSON
 
 /**
  * @author weishu

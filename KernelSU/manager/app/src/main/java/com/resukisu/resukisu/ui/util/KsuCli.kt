@@ -1,4 +1,4 @@
-package com.resukisu.resukisu.ui.util
+package com.bakasu.bakasu.ui.util
 
 import android.annotation.SuppressLint
 import android.net.Uri
@@ -7,9 +7,9 @@ import android.os.Parcelable
 import android.os.SystemClock
 import android.system.Os
 import android.util.Log
-import com.resukisu.resukisu.BuildConfig
-import com.resukisu.resukisu.Natives
-import com.resukisu.resukisu.ksuApp
+import com.bakasu.bakasu.BuildConfig
+import com.bakasu.bakasu.Natives
+import com.bakasu.bakasu.ksuApp
 import com.topjohnwu.superuser.CallbackList
 import com.topjohnwu.superuser.Shell
 import com.topjohnwu.superuser.ShellUtils

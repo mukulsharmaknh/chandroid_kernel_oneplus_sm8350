@@ -1,8 +1,8 @@
-package com.resukisu.resukisu.ui.component
+package com.bakasu.bakasu.ui.component
 
 import androidx.compose.runtime.Composable
-import com.resukisu.resukisu.Natives
-import com.resukisu.resukisu.ui.util.rootAvailable
+import com.bakasu.bakasu.Natives
+import com.bakasu.bakasu.ui.util.rootAvailable
 
 @Composable
 inline fun KsuIsValid(

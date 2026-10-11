@@ -1,4 +1,4 @@
-package com.resukisu.resukisu.ui.screen.about
+package com.bakasu.bakasu.ui.screen.about
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -51,14 +51,14 @@ import com.mikepenz.aboutlibraries.ui.compose.android.produceLibraries
 import com.mikepenz.aboutlibraries.ui.compose.m3.LibrariesContainer
 import com.mikepenz.aboutlibraries.ui.compose.m3.chipColors
 import com.mikepenz.aboutlibraries.ui.compose.m3.libraryColors
-import com.resukisu.resukisu.R
-import com.resukisu.resukisu.ui.component.WarningCard
-import com.resukisu.resukisu.ui.component.settings.AppBackButton
-import com.resukisu.resukisu.ui.navigation.LocalNavigator
-import com.resukisu.resukisu.ui.theme.CardConfig
-import com.resukisu.resukisu.ui.theme.ThemeConfig
-import com.resukisu.resukisu.ui.theme.blurEffect
-import com.resukisu.resukisu.ui.theme.blurSource
+import com.bakasu.bakasu.R
+import com.bakasu.bakasu.ui.component.WarningCard
+import com.bakasu.bakasu.ui.component.settings.AppBackButton
+import com.bakasu.bakasu.ui.navigation.LocalNavigator
+import com.bakasu.bakasu.ui.theme.CardConfig
+import com.bakasu.bakasu.ui.theme.ThemeConfig
+import com.bakasu.bakasu.ui.theme.blurEffect
+import com.bakasu.bakasu.ui.theme.blurSource
 
 @OptIn(ExperimentalMaterial3Api::class, ExperimentalMaterial3ExpressiveApi::class)
 @Composable

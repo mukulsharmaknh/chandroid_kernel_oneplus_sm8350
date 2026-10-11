@@ -1,4 +1,4 @@
-package com.resukisu.resukisu.ui.component
+package com.bakasu.bakasu.ui.component
 
 import android.annotation.SuppressLint
 import android.content.Intent
@@ -34,13 +34,13 @@ import androidx.compose.ui.unit.LayoutDirection
 import androidx.compose.ui.viewinterop.AndroidView
 import androidx.core.net.toUri
 import androidx.webkit.WebViewAssetLoader
-import com.resukisu.resukisu.ksuApp
-import com.resukisu.resukisu.ui.activity.util.adjustLightnessArgb
-import com.resukisu.resukisu.ui.activity.util.cssColorFromArgb
-import com.resukisu.resukisu.ui.activity.util.ensureVisibleByMix
-import com.resukisu.resukisu.ui.activity.util.relativeLuminance
-import com.resukisu.resukisu.ui.theme.ThemeConfig
-import com.resukisu.resukisu.ui.theme.isInDarkTheme
+import com.bakasu.bakasu.ksuApp
+import com.bakasu.bakasu.ui.activity.util.adjustLightnessArgb
+import com.bakasu.bakasu.ui.activity.util.cssColorFromArgb
+import com.bakasu.bakasu.ui.activity.util.ensureVisibleByMix
+import com.bakasu.bakasu.ui.activity.util.relativeLuminance
+import com.bakasu.bakasu.ui.theme.ThemeConfig
+import com.bakasu.bakasu.ui.theme.isInDarkTheme
 import okhttp3.Headers.Companion.toHeaders
 import okhttp3.OkHttpClient
 import okhttp3.Request

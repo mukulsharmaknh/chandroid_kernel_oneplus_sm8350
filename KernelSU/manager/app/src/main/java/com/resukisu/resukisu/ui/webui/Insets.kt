@@ -1,4 +1,4 @@
-package com.resukisu.resukisu.ui.webui
+package com.bakasu.bakasu.ui.webui
 
 /**
  * Insets data class from GitHub@MMRLApp/WebUI-X-Portable

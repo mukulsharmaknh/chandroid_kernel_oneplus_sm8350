@@ -1,15 +1,15 @@
-package com.resukisu.resukisu.ui.util.downloader
+package com.bakasu.bakasu.ui.util.downloader
 
 import android.Manifest
 import android.content.Context
 import android.net.Uri
 import android.os.Build
 import android.widget.Toast
-import com.resukisu.resukisu.R
-import com.resukisu.resukisu.ksuApp
-import com.resukisu.resukisu.ui.activity.PermissionRequestInterface
-import com.resukisu.resukisu.ui.activity.util.isNetworkAvailable
-import com.resukisu.resukisu.ui.util.module.LatestVersionInfo
+import com.bakasu.bakasu.R
+import com.bakasu.bakasu.ksuApp
+import com.bakasu.bakasu.ui.activity.PermissionRequestInterface
+import com.bakasu.bakasu.ui.activity.util.isNetworkAvailable
+import com.bakasu.bakasu.ui.util.module.LatestVersionInfo
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.cancel
@@ -121,7 +121,7 @@ fun download(
 
 fun checkNewVersion(): LatestVersionInfo {
     if (!isNetworkAvailable(ksuApp)) return LatestVersionInfo()
-    val url = "https://api.github.com/repos/ReSukiSU/ReSukiSU/releases/latest"
+    val url = "https://api.github.com/repos/BakaSU/BakaSU/releases/latest"
     // default null value if failed
     val defaultValue = LatestVersionInfo()
     runCatching {

@@ -1,4 +1,4 @@
-package com.resukisu.resukisu.ui.viewmodel
+package com.bakasu.bakasu.ui.viewmodel
 
 import android.content.Context
 import android.os.SystemClock
@@ -10,10 +10,10 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.resukisu.resukisu.ksuApp
-import com.resukisu.resukisu.ui.util.HanziToPinyin
-import com.resukisu.resukisu.ui.util.getRootShell
-import com.resukisu.resukisu.ui.util.listModules
+import com.bakasu.bakasu.ksuApp
+import com.bakasu.bakasu.ui.util.HanziToPinyin
+import com.bakasu.bakasu.ui.util.getRootShell
+import com.bakasu.bakasu.ui.util.listModules
 import com.topjohnwu.superuser.io.SuFile
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.async

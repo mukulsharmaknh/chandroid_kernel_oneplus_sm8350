@@ -131,7 +131,7 @@ NativeBridge(getAppProfile, jobject, jstring pkg, jint uid) {
 
 	bool useDefaultProfile = get_app_profile(&profile) != 0;
 
-	jclass cls = GetEnvironment()->FindClass(env, "com/resukisu/resukisu/Natives$Profile");
+	jclass cls = GetEnvironment()->FindClass(env, "com/bakasu/bakasu/Natives$Profile");
 	jmethodID constructor = GetEnvironment()->GetMethodID(env, cls, "<init>", "()V");
 	jobject obj = GetEnvironment()->NewObject(env, cls, constructor);
 	jfieldID keyField = GetEnvironment()->GetFieldID(env, cls, "name", "Ljava/lang/String;");
@@ -207,7 +207,7 @@ NativeBridge(getAppProfile, jobject, jstring pkg, jint uid) {
 }
 
 NativeBridge(setAppProfile, jboolean, jobject profile) {
-	jclass cls = GetEnvironment()->FindClass(env, "com/resukisu/resukisu/Natives$Profile");
+	jclass cls = GetEnvironment()->FindClass(env, "com/bakasu/bakasu/Natives$Profile");
 
 	jfieldID keyField = GetEnvironment()->GetFieldID(env, cls, "name", "Ljava/lang/String;");
 	jfieldID currentUidField = GetEnvironment()->GetFieldID(env, cls, "currentUid", "I");
@@ -352,7 +352,7 @@ NativeBridgeNP(getKernelPatchImplement, jobject) {
 	int type = get_kernel_patch_implement();
 
 	jclass cls = GetEnvironment()->FindClass(env,
-											 "com/resukisu/resukisu/Natives$KernelPatchImplement");
+											 "com/bakasu/bakasu/Natives$KernelPatchImplement");
 	if (cls == nullptr) {
 		jclass exCls = GetEnvironment()->FindClass(env, "java/lang/IllegalStateException");
 		GetEnvironment()->ThrowNew(env, exCls, "Could not find KernelPatchImplement class");
@@ -360,7 +360,7 @@ NativeBridgeNP(getKernelPatchImplement, jobject) {
 	}
 
 	jmethodID valuesMethod = GetEnvironment()->GetStaticMethodID(env, cls, "values",
-																 "()[Lcom/resukisu/resukisu/Natives$KernelPatchImplement;");
+																 "()[Lcom/bakasu/bakasu/Natives$KernelPatchImplement;");
 	if (valuesMethod == nullptr) {
 		jclass exCls = GetEnvironment()->FindClass(env, "java/lang/IllegalStateException");
 		GetEnvironment()->ThrowNew(env, exCls,
@@ -403,8 +403,8 @@ NativeBridgeNP(getDynamicManager, jobject) {
 		return NULL;
 	}
 
-	jobject obj = CREATE_JAVA_OBJECT("com/resukisu/resukisu/Natives$DynamicManagerConfig");
-	jclass cls = GetEnvironment()->FindClass(env, "com/resukisu/resukisu/Natives$DynamicManagerConfig");
+	jobject obj = CREATE_JAVA_OBJECT("com/bakasu/bakasu/Natives$DynamicManagerConfig");
+	jclass cls = GetEnvironment()->FindClass(env, "com/bakasu/bakasu/Natives$DynamicManagerConfig");
 
 	SET_INT_FIELD(obj, cls, size, (jint)cmd.size);
 	SET_STRING_FIELD(obj, cls, hash, (const char *)cmd.hash);
@@ -432,9 +432,9 @@ NativeBridgeNP(getManagersList, jobject) {
 
     int count = (cmd != NULL) ? (int) cmd->count : 0;
 
-    jobject obj = CREATE_JAVA_OBJECT("com/resukisu/resukisu/Natives$ManagersList");
+    jobject obj = CREATE_JAVA_OBJECT("com/bakasu/bakasu/Natives$ManagersList");
     jclass managerListCls = GetEnvironment()->FindClass(env,
-                                                        "com/resukisu/resukisu/Natives$ManagersList");
+                                                        "com/bakasu/bakasu/Natives$ManagersList");
 
     SET_INT_FIELD(obj, managerListCls, count, (jint) count);
 
@@ -443,7 +443,7 @@ NativeBridgeNP(getManagersList, jobject) {
     if (cmd && count > 0) {
         for (int i = 0; i < count; i++) {
             jobject managerInfo = CREATE_JAVA_OBJECT_WITH_PARAMS(
-                    "com/resukisu/resukisu/Natives$ManagerInfo",
+                    "com/bakasu/bakasu/Natives$ManagerInfo",
                     "(II)V",
                     (jint) cmd->managers[i].uid,
                     (jint) cmd->managers[i].signature_index
@@ -499,7 +499,7 @@ int fork_dont_care_and_exec_ksud(const char *path, const char *pkg) {
 }
 
 JNIEXPORT void JNICALL
-Java_com_resukisu_resukisu_magica_AppZygotePreload_forkDontCareAndExecKsud(JNIEnv *env,
+Java_com_bakasu_bakasu_magica_AppZygotePreload_forkDontCareAndExecKsud(JNIEnv *env,
                                                                            jclass clazz,
                                                                            jstring ksud_path, jstring pkg_name) {
     const char *path = GetEnvironment()->GetStringUTFChars(env, ksud_path, nullptr);

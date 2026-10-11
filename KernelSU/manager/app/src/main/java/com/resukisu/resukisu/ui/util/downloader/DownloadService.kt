@@ -1,4 +1,4 @@
-package com.resukisu.resukisu.ui.util.downloader
+package com.bakasu.bakasu.ui.util.downloader
 
 import android.app.NotificationChannel
 import android.app.NotificationManager
@@ -11,9 +11,9 @@ import android.os.Build
 import android.os.Environment
 import android.os.IBinder
 import androidx.core.app.NotificationCompat
-import com.resukisu.resukisu.R
-import com.resukisu.resukisu.ksuApp
-import com.resukisu.resukisu.ui.MainActivity
+import com.bakasu.bakasu.R
+import com.bakasu.bakasu.ksuApp
+import com.bakasu.bakasu.ui.MainActivity
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -31,10 +31,10 @@ class DownloadService : Service() {
 
     companion object {
         const val CHANNEL_ID = "download_channel"
-        const val ACTION_DOWNLOAD = "com.resukisu.resukisu.action.DOWNLOAD"
-        const val ACTION_CANCEL = "com.resukisu.resukisu.action.CANCEL_DOWNLOAD"
-        const val ACTION_DISMISS_DOWNLOAD = "com.resukisu.resukisu.action.DISMISS_DOWNLOAD"
-        const val ACTION_INSTALL_MODULE = "com.resukisu.resukisu.action.INSTALL_MODULE"
+        const val ACTION_DOWNLOAD = "com.bakasu.bakasu.action.DOWNLOAD"
+        const val ACTION_CANCEL = "com.bakasu.bakasu.action.CANCEL_DOWNLOAD"
+        const val ACTION_DISMISS_DOWNLOAD = "com.bakasu.bakasu.action.DISMISS_DOWNLOAD"
+        const val ACTION_INSTALL_MODULE = "com.bakasu.bakasu.action.INSTALL_MODULE"
         const val EXTRA_URL = "url"
         const val EXTRA_FILE_NAME = "fileName"
         const val EXTRA_DOWNLOAD_ID = "downloadId"

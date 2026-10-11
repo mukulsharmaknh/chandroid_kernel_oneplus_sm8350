@@ -1,4 +1,4 @@
-package com.resukisu.resukisu.ui.util
+package com.bakasu.bakasu.ui.util
 
 /*
  * Copyright (C) 2009 The Android Open Source Project

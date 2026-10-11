@@ -1,4 +1,4 @@
-package com.resukisu.resukisu.ui.viewmodel
+package com.bakasu.bakasu.ui.viewmodel
 
 import android.content.ComponentName
 import android.content.Context
@@ -19,11 +19,11 @@ import androidx.compose.runtime.setValue
 import androidx.core.content.edit
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.resukisu.resukisu.Natives
-import com.resukisu.resukisu.ksuApp
-import com.resukisu.resukisu.ui.KsuService
-import com.resukisu.resukisu.ui.util.HanziToPinyin
-import com.resukisu.zako.IKsuInterface
+import com.bakasu.bakasu.Natives
+import com.bakasu.bakasu.ksuApp
+import com.bakasu.bakasu.ui.KsuService
+import com.bakasu.bakasu.ui.util.HanziToPinyin
+import com.bakasu.zako.IKsuInterface
 import com.topjohnwu.superuser.Shell
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.asCoroutineDispatcher
@@ -45,10 +45,10 @@ import kotlin.coroutines.resume
 import kotlin.coroutines.suspendCoroutine
 
 enum class AppCategory(val displayNameRes: Int, val persistKey: String) {
-    ALL(com.resukisu.resukisu.R.string.category_all_apps, "ALL"),
-    ROOT(com.resukisu.resukisu.R.string.category_root_apps, "ROOT"),
-    CUSTOM(com.resukisu.resukisu.R.string.category_custom_apps, "CUSTOM"),
-    DEFAULT(com.resukisu.resukisu.R.string.category_default_apps, "DEFAULT");
+    ALL(com.bakasu.bakasu.R.string.category_all_apps, "ALL"),
+    ROOT(com.bakasu.bakasu.R.string.category_root_apps, "ROOT"),
+    CUSTOM(com.bakasu.bakasu.R.string.category_custom_apps, "CUSTOM"),
+    DEFAULT(com.bakasu.bakasu.R.string.category_default_apps, "DEFAULT");
 
     companion object {
         fun fromPersistKey(key: String): AppCategory = entries.find { it.persistKey == key } ?: ALL
@@ -56,13 +56,13 @@ enum class AppCategory(val displayNameRes: Int, val persistKey: String) {
 }
 
 enum class SortType(val displayNameRes: Int, val persistKey: String) {
-    NAME_ASC(com.resukisu.resukisu.R.string.sort_name_asc, "NAME_ASC"),
-    NAME_DESC(com.resukisu.resukisu.R.string.sort_name_desc, "NAME_DESC"),
-    INSTALL_TIME_NEW(com.resukisu.resukisu.R.string.sort_install_time_new, "INSTALL_TIME_NEW"),
-    INSTALL_TIME_OLD(com.resukisu.resukisu.R.string.sort_install_time_old, "INSTALL_TIME_OLD"),
-    SIZE_DESC(com.resukisu.resukisu.R.string.sort_size_desc, "SIZE_DESC"),
-    SIZE_ASC(com.resukisu.resukisu.R.string.sort_size_asc, "SIZE_ASC"),
-    USAGE_FREQ(com.resukisu.resukisu.R.string.sort_usage_freq, "USAGE_FREQ");
+    NAME_ASC(com.bakasu.bakasu.R.string.sort_name_asc, "NAME_ASC"),
+    NAME_DESC(com.bakasu.bakasu.R.string.sort_name_desc, "NAME_DESC"),
+    INSTALL_TIME_NEW(com.bakasu.bakasu.R.string.sort_install_time_new, "INSTALL_TIME_NEW"),
+    INSTALL_TIME_OLD(com.bakasu.bakasu.R.string.sort_install_time_old, "INSTALL_TIME_OLD"),
+    SIZE_DESC(com.bakasu.bakasu.R.string.sort_size_desc, "SIZE_DESC"),
+    SIZE_ASC(com.bakasu.bakasu.R.string.sort_size_asc, "SIZE_ASC"),
+    USAGE_FREQ(com.bakasu.bakasu.R.string.sort_usage_freq, "USAGE_FREQ");
 
     companion object {
         fun fromPersistKey(key: String): SortType = entries.find { it.persistKey == key } ?: NAME_ASC

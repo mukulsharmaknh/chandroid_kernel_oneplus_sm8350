@@ -1,10 +1,10 @@
-package com.resukisu.resukisu.ui.util.module
+package com.bakasu.bakasu.ui.util.module
 
 import android.os.Parcelable
 import android.util.Log
 import androidx.compose.runtime.Immutable
-import com.resukisu.resukisu.ksuApp
-import com.resukisu.resukisu.ui.activity.util.isNetworkAvailable
+import com.bakasu.bakasu.ksuApp
+import com.bakasu.bakasu.ui.activity.util.isNetworkAvailable
 import kotlinx.parcelize.Parcelize
 import okhttp3.Request
 import org.json.JSONArray

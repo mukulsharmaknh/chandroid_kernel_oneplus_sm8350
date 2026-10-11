@@ -1,4 +1,4 @@
-package com.resukisu.resukisu.ui.theme
+package com.bakasu.bakasu.ui.theme
 
 import android.R
 import android.content.Context
@@ -57,10 +57,10 @@ import com.kyant.m3color.hct.Hct
 import com.kyant.m3color.quantize.QuantizerCelebi
 import com.kyant.m3color.scheme.SchemeTonalSpot
 import com.kyant.m3color.score.Score
-import com.resukisu.resukisu.ui.theme.util.BackgroundTransformation
-import com.resukisu.resukisu.ui.theme.util.saveTransformedBackground
-import com.resukisu.resukisu.ui.util.LocalBlurState
-import com.resukisu.resukisu.ui.webui.MonetColorsProvider
+import com.bakasu.bakasu.ui.theme.util.BackgroundTransformation
+import com.bakasu.bakasu.ui.theme.util.saveTransformedBackground
+import com.bakasu.bakasu.ui.util.LocalBlurState
+import com.bakasu.bakasu.ui.webui.MonetColorsProvider
 import kotlinx.coroutines.DelicateCoroutinesApi
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope

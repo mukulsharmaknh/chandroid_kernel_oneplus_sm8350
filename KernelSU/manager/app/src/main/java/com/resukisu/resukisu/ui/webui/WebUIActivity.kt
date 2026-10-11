@@ -1,4 +1,4 @@
-package com.resukisu.resukisu.ui.webui
+package com.bakasu.bakasu.ui.webui
 
 import android.annotation.SuppressLint
 import android.os.Build
@@ -21,9 +21,9 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.lifecycle.viewmodel.compose.viewModel
-import com.resukisu.resukisu.ksuApp
-import com.resukisu.resukisu.ui.theme.KernelSUTheme
-import com.resukisu.resukisu.ui.viewmodel.ModuleViewModel
+import com.bakasu.bakasu.ksuApp
+import com.bakasu.bakasu.ui.theme.KernelSUTheme
+import com.bakasu.bakasu.ui.viewmodel.ModuleViewModel
 
 @SuppressLint("SetJavaScriptEnabled")
 class WebUIActivity : ComponentActivity() {

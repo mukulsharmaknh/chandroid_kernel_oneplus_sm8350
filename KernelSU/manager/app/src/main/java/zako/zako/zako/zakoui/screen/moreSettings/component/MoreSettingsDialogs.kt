@@ -33,9 +33,9 @@ import com.maxkeppeker.sheets.core.models.base.rememberUseCaseState
 import com.maxkeppeler.sheets.list.ListDialog
 import com.maxkeppeler.sheets.list.models.ListOption
 import com.maxkeppeler.sheets.list.models.ListSelection
-import com.resukisu.resukisu.R
-import com.resukisu.resukisu.ui.theme.ThemeColors
-import com.resukisu.resukisu.ui.theme.ThemeConfig
+import com.bakasu.bakasu.R
+import com.bakasu.bakasu.ui.theme.ThemeColors
+import com.bakasu.bakasu.ui.theme.ThemeConfig
 import zako.zako.zako.zakoui.screen.moreSettings.MoreSettingsHandlers
 import zako.zako.zako.zakoui.screen.moreSettings.state.MoreSettingsState
 import zako.zako.zako.zakoui.screen.moreSettings.util.LocaleHelper

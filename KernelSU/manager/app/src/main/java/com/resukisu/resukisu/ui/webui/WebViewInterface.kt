@@ -1,4 +1,4 @@
-package com.resukisu.resukisu.ui.webui
+package com.bakasu.bakasu.ui.webui
 
 import android.app.Activity
 import android.content.pm.ApplicationInfo
@@ -11,12 +11,12 @@ import android.widget.Toast
 import androidx.core.content.pm.PackageInfoCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.WindowInsetsControllerCompat
-import com.resukisu.resukisu.ui.util.controlKpmModule
-import com.resukisu.resukisu.ui.util.createRootShell
-import com.resukisu.resukisu.ui.util.listKpmModules
-import com.resukisu.resukisu.ui.util.listModules
-import com.resukisu.resukisu.ui.util.withNewRootShell
-import com.resukisu.resukisu.ui.viewmodel.SuperUserViewModel
+import com.bakasu.bakasu.ui.util.controlKpmModule
+import com.bakasu.bakasu.ui.util.createRootShell
+import com.bakasu.bakasu.ui.util.listKpmModules
+import com.bakasu.bakasu.ui.util.listModules
+import com.bakasu.bakasu.ui.util.withNewRootShell
+import com.bakasu.bakasu.ui.viewmodel.SuperUserViewModel
 import com.topjohnwu.superuser.CallbackList
 import com.topjohnwu.superuser.ShellUtils
 import com.topjohnwu.superuser.internal.UiThreadHandler

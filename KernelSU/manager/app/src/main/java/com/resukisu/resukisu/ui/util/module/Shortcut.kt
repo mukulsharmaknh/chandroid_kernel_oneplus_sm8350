@@ -1,4 +1,4 @@
-package com.resukisu.resukisu.ui.util.module
+package com.bakasu.bakasu.ui.util.module
 
 import android.app.AppOpsManager
 import android.content.ComponentName
@@ -16,13 +16,13 @@ import androidx.core.content.pm.ShortcutManagerCompat
 import androidx.core.graphics.drawable.IconCompat
 import androidx.core.graphics.scale
 import androidx.core.net.toUri
-import com.resukisu.resukisu.R
-import com.resukisu.resukisu.ui.MainActivity
-import com.resukisu.resukisu.ui.util.getRootShell
-import com.resukisu.resukisu.ui.util.isColorOS
-import com.resukisu.resukisu.ui.util.isHyperOS
-import com.resukisu.resukisu.ui.util.isMiui
-import com.resukisu.resukisu.ui.webui.WebUIActivity
+import com.bakasu.bakasu.R
+import com.bakasu.bakasu.ui.MainActivity
+import com.bakasu.bakasu.ui.util.getRootShell
+import com.bakasu.bakasu.ui.util.isColorOS
+import com.bakasu.bakasu.ui.util.isHyperOS
+import com.bakasu.bakasu.ui.util.isMiui
+import com.bakasu.bakasu.ui.webui.WebUIActivity
 import com.topjohnwu.superuser.io.SuFile
 import com.topjohnwu.superuser.io.SuFileInputStream
 

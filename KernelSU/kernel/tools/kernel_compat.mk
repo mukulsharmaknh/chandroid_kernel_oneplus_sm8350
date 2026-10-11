@@ -275,7 +275,7 @@ endif
 
 # for HUAWEI kernel
 # huawei rename type_attr_map_arry -> type_attr_map
-# https://github.com/xixiaobei-bei/Huawei_MHA_EMUI9.0_ReSukiSU/blob/master/security/selinux/ss/policydb.h#L293
+# https://github.com/xixiaobei-bei/Huawei_MHA_EMUI9.0_BakaSU/blob/master/security/selinux/ss/policydb.h#L293
 ifneq ($(shell grep -q "type_attr_map_array" $(srctree)/security/selinux/ss/policydb.h; echo $$?),0)
 $(info -- $(REPO_NAME)/compat: type_attr_map_array not found)
 ccflags-y += -DKSU_COMPAT_TYPE_ATTR_MAP_ARRAY_NOT_FOUND
@@ -283,7 +283,7 @@ endif
 
 # for HUAWEI kernel
 # huawei removed sym_name func
-# https://github.com/xixiaobei-bei/Huawei_MHA_EMUI9.0_ReSukiSU/blob/master/security/selinux/ss/policydb.h
+# https://github.com/xixiaobei-bei/Huawei_MHA_EMUI9.0_BakaSU/blob/master/security/selinux/ss/policydb.h
 ifneq ($(shell grep -q "sym_name" $(srctree)/security/selinux/ss/policydb.h; echo $$?),0)
 $(info -- $(REPO_NAME)/compat: sym_name not found)
 ccflags-y += -DKSU_COMPAT_SYM_NAME_NOT_FOUND

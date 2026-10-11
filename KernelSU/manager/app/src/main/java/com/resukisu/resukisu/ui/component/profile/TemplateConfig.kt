@@ -1,4 +1,4 @@
-package com.resukisu.resukisu.ui.component.profile
+package com.bakasu.bakasu.ui.component.profile
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.padding
@@ -18,12 +18,12 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import com.resukisu.resukisu.Natives
-import com.resukisu.resukisu.R
-import com.resukisu.resukisu.ui.component.settings.SettingsDropdownWidget
-import com.resukisu.resukisu.ui.util.listAppProfileTemplates
-import com.resukisu.resukisu.ui.util.setSepolicy
-import com.resukisu.resukisu.ui.viewmodel.getTemplateInfoById
+import com.bakasu.bakasu.Natives
+import com.bakasu.bakasu.R
+import com.bakasu.bakasu.ui.component.settings.SettingsDropdownWidget
+import com.bakasu.bakasu.ui.util.listAppProfileTemplates
+import com.bakasu.bakasu.ui.util.setSepolicy
+import com.bakasu.bakasu.ui.viewmodel.getTemplateInfoById
 
 /**
  * @author weishu

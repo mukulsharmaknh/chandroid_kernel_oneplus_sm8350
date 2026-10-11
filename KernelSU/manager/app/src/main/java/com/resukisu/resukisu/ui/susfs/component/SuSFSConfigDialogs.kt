@@ -1,4 +1,4 @@
-package com.resukisu.resukisu.ui.susfs.component
+package com.bakasu.bakasu.ui.susfs.component
 
 import android.annotation.SuppressLint
 import android.content.pm.PackageInfo
@@ -69,9 +69,9 @@ import androidx.compose.ui.unit.sp
 import coil.compose.AsyncImage
 import coil.request.ImageRequest
 import com.google.accompanist.drawablepainter.rememberDrawablePainter
-import com.resukisu.resukisu.R
-import com.resukisu.resukisu.ui.susfs.util.SuSFSManager
-import com.resukisu.resukisu.ui.viewmodel.SuperUserViewModel
+import com.bakasu.bakasu.R
+import com.bakasu.bakasu.ui.susfs.util.SuSFSManager
+import com.bakasu.bakasu.ui.viewmodel.SuperUserViewModel
 import kotlinx.coroutines.launch
 
 // TODO REFACTOR!!! there are fully shit, we should refactor them after susfs-ksud branch merge

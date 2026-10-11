@@ -1,4 +1,4 @@
-package com.resukisu.resukisu.ui.susfs.util
+package com.bakasu.bakasu.ui.susfs.util
 
 import android.annotation.SuppressLint
 import android.content.Context
@@ -9,11 +9,11 @@ import android.os.Build
 import android.util.Log
 import android.widget.Toast
 import androidx.core.content.edit
-import com.resukisu.resukisu.R
-import com.resukisu.resukisu.ui.util.getRootShell
-import com.resukisu.resukisu.ui.util.getSuSFSFeatures
-import com.resukisu.resukisu.ui.util.getSuSFSVersion
-import com.resukisu.resukisu.ui.viewmodel.SuperUserViewModel
+import com.bakasu.bakasu.R
+import com.bakasu.bakasu.ui.util.getRootShell
+import com.bakasu.bakasu.ui.util.getSuSFSFeatures
+import com.bakasu.bakasu.ui.util.getSuSFSVersion
+import com.bakasu.bakasu.ui.viewmodel.SuperUserViewModel
 import com.topjohnwu.superuser.Shell
 import com.topjohnwu.superuser.io.SuFile
 import kotlinx.coroutines.CoroutineScope

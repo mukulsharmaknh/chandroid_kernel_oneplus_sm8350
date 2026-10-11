@@ -1,11 +1,11 @@
-package com.resukisu.resukisu.ui.util
+package com.bakasu.bakasu.ui.util
 
 import android.content.Context
 import android.os.Build
 import android.system.Os
 import com.topjohnwu.superuser.ShellUtils
-import com.resukisu.resukisu.Natives
-import com.resukisu.resukisu.ui.screen.main.getManagerVersion
+import com.bakasu.bakasu.Natives
+import com.bakasu.bakasu.ui.screen.main.getManagerVersion
 import java.io.File
 import java.io.FileWriter
 import java.io.PrintWriter
